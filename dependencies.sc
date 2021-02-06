@@ -1,0 +1,2 @@
+curl=ok
+lolcat=ok

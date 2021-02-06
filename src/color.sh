@@ -1,0 +1,10 @@
+m="\e[0;31m" # merah
+k="\e[0;33m" # kuning
+h="\e[0;32m" # hijau
+b="\e[0;34m" # biru
+lm="\e[1;31m" # merah terang
+lk="\e[1;33m" # kuning terang
+lh="\e[1;32m" # hijau terang
+lb="\e[1;34m" # biru terang seterang masa depan kita.
+n="\e[0m" # clear / netral
+w="\e[1;37m" # putih tebal

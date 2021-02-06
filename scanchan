@@ -1,0 +1,44 @@
+#!/bin/bash
+
+source src/color.sh
+source src/dorking_scan.sh
+source src/automated_sqlmap.sh
+source src/dorking.sh
+source src/scan_sqli.sh
+source src/io_func.sh
+
+banner(){
+	clear
+	printf "
+ ____                   ____ _                 
+/ ___|  ___ __ _ _ __  / ___| |__   __ _ _ __  
+\___ \ / __/ _' | '_ \| |   | '_ \ / _' | '_ \ 
+ ___) | (_| (_| | | | | |___| | | | (_| | | | |
+|____/ \___\__,_|_| |_|\____|_| |_|\__,_|_| |_|
+                                               
++==[ Automated tools for scan SQL injection ]==+
+
+ < [1]. Dorking & Scan SQLi
+ < [2]. Automated SQLMap
+ < [3]. Scan SQLi local files
+ < [4]. Dorking target
+"
+}
+
+action()
+{
+	read -p "scanchan: >" opt
+
+	if [[ $opt == 1 ]]; then
+		__src_dorking_scan
+	elif [[ $opt == 2 ]]; then
+		__src_auto_sqlmap
+	elif [[ $opt == 3 ]]; then
+		__src_scan_sqli
+	elif [[ $opt == 4 ]]; then
+		__src_dorking
+	fi
+}
+
+banner
+action
