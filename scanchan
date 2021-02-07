@@ -37,6 +37,9 @@ action()
 		__src_scan_sqli
 	elif [[ $opt == 4 ]]; then
 		__src_dorking
+	else
+		 banner
+		 action
 	fi
 }
 
