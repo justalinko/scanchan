@@ -1,1 +1,1 @@
-sqlmap xfce4-terminal curl
+sqlmap xfce4-terminal curl whiptail
