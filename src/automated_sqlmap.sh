@@ -1,8 +1,7 @@
 #!/bin/bash
 
-
-__src_auto_sqlmap(){
-
+open_terminal()
+{
 	Filebrowser "SELECT VULN LIST" "`pwd`/output"
 
 	if [[ $selection == "" ]]; then
@@ -16,4 +15,29 @@ __src_auto_sqlmap(){
 			sleep 2
 		done
 	fi
+}
+basic_scan()
+{
+	Filebrowser "SELECT VULN LIST" "`pwd`/output"
+
+	if [[ $selection == "" ]]; then
+		echo "Exiting program ..."
+		exit 0
+	else
+		sqlmap -m $filepath/$filename --crawl=1 --
+	fi
+}
+
+__src_auto_sqlmap(){
+
+
+	echo "[1]. MASS OPEN TERMINAL ( xfce4-terminal )"
+	echo "[2]. BASIC MASS SCANNER "
+	read -p "choose >>" open
+	if [[ $open == 1 ]]; then
+		open_terminal
+	else
+		basic_scan
+	fi
+	
 }
